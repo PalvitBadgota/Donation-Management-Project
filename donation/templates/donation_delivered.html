@@ -1,0 +1,37 @@
+{% extends 'volunteer_base.html' %}
+
+{% block main %} 
+<div class="container">
+    <div class="card shadow" style="overflow:auto">
+        <div class="card-body">
+
+            <h2 style="border-bottom:2px solid orange;"><b>Donation Delivered Successfully &#128522;</b></h2>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>S.NO</th>
+                        <th>Donation Name</th>
+                        <th>Donation Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in donation %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.donationname}}</td>
+                        <td>{{i.donationdate}}</td>
+                        <td>{{i.stat}}</td>
+                        <td><a href="{% url 'donationrec_detail' i.id %}" class="text-primary">View Details</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+</div>
+
+{% endblock %}

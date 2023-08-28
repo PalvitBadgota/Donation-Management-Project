@@ -1,0 +1,189 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% include 'base.html' %}
+
+</head>
+
+<body>
+    {% include 'navigation.html' %}
+
+    <div class="conatiner-fluid bg-light p-0" id="#home">
+        <div class="row r1 pt-3 ">
+            <div class="col-7 ml-md-4">
+                <h1 class=" p-sm-3  text-center text-danger" id="hh1">Reduce Wastage Of Needy Items</h1>
+                <h3 class="mx-sm-5 pt-3 pb-2 head1">Help others Without any reason and give without the expection of receving anything in return</h3>
+                <h3 class="px-sm-5 head1 ">Always give without remembering and always receive without forgetting</h3>
+                <div class="anc mx-sm-5 mt-3 " id="d2">
+                    <a href="https://www.google.com/search?q=donation+to+help&sxsrf=ALiCzsZfXYydEFWF_xDsHWElSXuUoxHEMw%3A1663083760684&source=hp&ei=8KQgY6a3J8r54-EPmsSZ-Ao&iflsig=AJiK0e8AAAAAYyCzAIfKZLvPtpRhRDcY4fqZn0hDHHnC&ved=0ahUKEwim76PmjZL6AhXK_DgGHRpiBq8Q4dUDCAc&uact=5&oq=donation+to+help&gs_lcp=Cgdnd3Mtd2l6EAMyBAgjECcyBQgAEIAEMgYIABAeEBYyBggAEB4QFjIGCAAQHhAWMgYIABAeEBYyBggAEB4QFjIGCAAQHhAWMgYIABAeEBYyBggAEB4QFjoFCAAQkQI6CwgAEIAEELEDEIMBOhMILhCxAxCDARDHARDRAxDUAhBDOgQIABBDOggILhCxAxCDAToRCC4QgAQQsQMQgwEQxwEQ0QM6BwgAEMkDEEM6BwgAELEDEEM6CggAELEDEMkDEEM6CAgAEIAEELEDOgoIABAeEA8QFhAKOgUIABCGAzoHCCEQoAEQClAAWLwjYNQmaAJwAHgBgAHeA4gB6yWSAQkwLjguOC4zLjGYAQCgAQE&sclient=gws-wiz" target="_blank" class="btn btn-success px-sm-2 py-2 b1 ml-1">Read More<i class="px-1 fa-solid fa-angles-right"></i></a>
+                    <a href="{% url 'all_logins' %}" class="btn btn-primary px-sm-2 py-2 b1">Donate Now<i class="px-1 fa-solid fa-angles-right"></i></a>
+                </div>
+
+            </div>
+            <div class="col p-0" id="d1">
+                <img class="img-thumbnail w-md-100" id="image1" src="{% static 'images/image1.jpg' %}" alt="No Image ">
+            </div>
+        </div>
+    </div>
+
+    <div class="conatiner-fluid mb-3" id="about">
+        <div class="row r1 pt-3 ">
+            <div class="col mx-5 " id="d1">
+                <img class="img-thumbnail w-md-100" id="image2" src="{% static 'images/image2.jpg' %}" alt="No Image ">
+            </div>
+            <div class="col-7 p-0 ml-md-4">
+                <h1 class=" p-sm-3  text-center text-danger" id="hh2">About Us</h1>
+                <h3 class="mx-sm-5 pt-1 pb-2 head1">This system is provide a plateform to donor where they can donate things like food ,clothes ,books ,footwears , vessels , toys etc. We collect all donation and redistributes to poor peoples.
+                    <div class="anc  mt-3 " id="d3">
+                        <a href="#contact" class="btn btn-success px-sm-2 py-2 b1">Read More <i class="px-1 fa-solid fa-angles-right"></i></a>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid bg-light">
+        <h1 class="text-center pt-3 pb-3 text-danger">Our Special Services</h1>
+        <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class=" carousel-item active">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <div class="card-group ">
+                                <div class="card c1 m-4" style="width: 18rem; ">
+                                    <img src="{% static 'images/card1.jpg' %}" class="card-img-top " alt="... ">
+                                    <div class="card-body ">
+                                        <h5 class="card-title text-center "><b>Clothes Donation</b></h5>
+                                        <p class="card-text text-center ">Be a cause of someone's happiness.Donate your old clothes to needy people.</p>
+                                    </div>
+                                </div>
+                                <div class="card c1 m-4 " style="width: 18rem; ">
+                                    <img src="{% static 'images/card2.jpg' %}" class="card-img-top " alt="... ">
+                                    <div class="card-body ">
+                                        <h5 class="card-title text-center "><b>Footwear Donation</b></h5>
+                                        <p class="card-text ">Donate used or new pair footwear to change someone's lives.</p>
+
+                                    </div>
+                                </div>
+                                <div class="card c1 m-4 " style="width: 18rem; ">
+                                    <img src="{% static 'images/card3.jpg' %}" class="card-img-top " alt="... ">
+                                    <div class="card-body ">
+                                        <h5 class="card-title text-center "><b>Vessel Donation</b></h5>
+                                        <p class="card-text ">Donate your old used or unused vessel to needy people so they can use them.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center ">
+                            <div class="card-group ">
+
+                                <div class="card c1 m-4 " style="width: 18rem; ">
+                                    <img src="{% static 'images/card4.jpg' %}" class="card-img-top " alt="... ">
+                                    <div class="card-body ">
+                                        <h5 class="card-title "><b>Books Donation</b></h5>
+                                        <p class="card-text ">Donate your old books to needy people so they can study.</p>
+                                    </div>
+                                </div>
+                                <div class="card c1 m-4 " style="width: 18rem; ">
+                                    <img src="{% static 'images/card5.jpg' %} " class="card-img-top " alt="... ">
+                                    <div class="card-body ">
+                                        <h5 class="card-title "><b>Furniture Donation</b></h5>
+                                        <p class="card-text ">Donate your old furniture to needy people so they can use them.</p>
+
+                                    </div>
+                                </div>
+                                <div class="card c1 m-4 " style="width: 18rem; ">
+                                    <img src="{% static 'images/card6.jpg' %}" class="card-img-top " alt="... ">
+                                    <div class="card-body ">
+                                        <h5 class="card-title "><b>Furniture Donation</b></h5>
+                                        <p class="card-text ">Donate your old furniture to needy people so they can use them.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev " type="button " data-bs-target="#carouselExampleControls " data-bs-slide="prev ">
+              <span class="carousel-control-prev-icon bg-dark" aria-hidden="true "></span>
+              <span class="visually-hidden ">Previous</span>
+            </button>
+            <button class="carousel-control-next " type="button " data-bs-target="#carouselExampleControls " data-bs-slide="next ">
+              <span class="carousel-control-next-icon bg-dark" aria-hidden="true "></span>
+              <span class="visually-hidden ">Next</span>
+            </button> 
+        </div>
+    </div>
+
+    <div class="row mt-5 mb-5" id="donate">
+        <div class="col-md-6 mt-md-4 mb-3 border-end" style="margin:auto; ">
+            <h3 class="text-center " style="color:rgb(25, 209, 25)"><b>Best Way To help Others</b></h3>
+            <p class="text-center lead text-danger">Join Us and become part of this good work</p>
+            <center>
+                <a href="{% url 'donor_login' %}" class="btn btn-primary mt-sm-4 b2">Donate Now <i class="px-1 fa-solid fa-angles-right"></i></a>
+            </center>
+        </div>
+
+        <div class="col-md-6 mt-4" style="margin:auto;">
+            <h3 class="text-center" style="color:rgb(25, 209, 25)"><b>Become A Volunteer Today</b></h3>
+            <p class="text-center lead text-danger">One of the greatest gifts you can give is your time</p>
+            <center>
+                <a href="{% url 'volunteer_login' %}" class="btn btn-primary mt-sm-4 b2 ">Become Volunteer<i class="px-1 fa-solid fa-angles-right"></i></a>
+            </center>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-light" id="contact">
+        <div class="row">
+            <h1 class="text-center mt-5 text-danger font-weight-bold"><b>Contact Us</b></h3>
+                <div class="col-lg-2 col-sm-6 mt-5">
+                    <h3 class="text-center"><i class="fa-solid fa-square-phone-flip px-1"></i>Contact</h3>
+                    <p class="mt-3 text-center"><a class="text-danger lead text-decoration-none a2" href="tel:+91 8307615221">+91 8307615221</a></p>
+                </div>
+                <div class="col-lg-4 col-sm-6 mt-5">
+                    <h3 class="text-center"><i class="fa-solid fa-envelope px-1"></i>Send Mail</h3>
+                    <p class="mt-3 text-center p1"><a class="text-danger lead text-decoration-none a2" id="aa2" href="mailto:lovekeshkumar4546@gmail.com">lovekeshkumar4546@gmail.com</a></p>
+                </div>
+                <div class="col-lg-3 col-sm-6 mt-5">
+                    <h3 class="text-center"><i class="fa-solid fa-address-card "></i>Office Address</h3>
+                    <p class="mt-3 text-center"><a class="text-danger lead text-decoration-none a2" href="http://maps.google.com/maps?q=radaur+haryana">Radaur Haryana</a></p>
+                </div>
+                <div class="col-lg-3 col-sm-6 mt-5 mb-5">
+                    <h3 class="text-center"><i class="fa-solid fa-clock"></i>Office Hours</h3>
+                    <p class="mt-3 text-danger text-center  lead">9:00 AM to 7:00 PM</p>
+                </div>
+        </div>
+    </div>
+
+
+    <footer class="container-fluid bg-dark text-white" style="border-top:2px solid red;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 m-4 d-inline">
+                    <div>
+                        <span style="font-size:20px;">
+                            <b>Follow Us:</b>
+                        </span>
+                        <a href="https:www.facebook.com/Lovekesh Kamboz" target="_blank">
+                            <i class="fa-brands fa-square-facebook px-3 text-white" style="font-size:25px;"></i>
+                        </a>
+                        <a href="#" target="_blank"><i class="fa-brands fa-instagram text-white p-2" style="font-size:25px;"></i></a>
+                        <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in text-white p-2" style="font-size:25px;"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-8 text-white mb-3">
+                    <small>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All Rights Reserved | This Website is made with <i class="fas fa-heart text-warning"></i> by <a href="#" target="_blank"> Lovekesh Kamboj</a> </small>
+                </div>
+            </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js " integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa " crossorigin="anonymous "></script>
+</body>
+
+</html>

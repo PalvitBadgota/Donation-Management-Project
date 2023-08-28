@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+#logo {
+    height: 50px;
+    width: 50px;
+}
+
+.a1 {
+    font-size: 26px;
+    border-radius: 6px;
+    margin-right: 8px;
+}
+
+.row {
+    --bs-gutter-x: 0!important;
+}
+
+.a1:hover {
+    background-color: white;
+    color: black!important;
+}
+
+.a2:hover {
+    font-weight: bold;
+    color: brown!important;
+}
+
+@media (max-width:415px) {
+    #sp1 {
+        font-size: 20px;
+    }
+    .a1 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width:342px) {
+    #logo {
+        height: 30px;
+        width: 30px;
+    }
+    #sp1 {
+        font-size: 15px;
+    }
+}
+
+@media (max-width:1200px) {
+    #image1 {
+        margin-top: 4rem;
+    }
+    #para1 {
+        font-size: 35px;
+    }
+    #image2 {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width:950px) {
+    #image1 {
+        width: 750px;
+    }
+    #d1 {
+        margin-left: 0px!important;
+        margin-right: 4px!important;
+    }
+}
+
+@media (max-width:768px) {
+    .head1 {
+        font-size: 20px;
+    }
+    #hh1 {
+        font-size: 30px;
+    }
+    .btn {
+        font-size: 14px;
+    }
+}
+
+@media (max-width:437px) {
+    .head1 {
+        font-size: 15px;
+    }
+    #hh1 {
+        font-size: 17px;
+    }
+    .b1 {
+        font-size: 9px;
+        padding: 2px 2px!important;
+    }
+    .r1 {
+        margin-left: 3rem;
+    }
+}
+
+@media (max-width:576px) {
+    #d2 {
+        margin-left: 1px;
+    }
+    .head1 {
+        margin-left: 5px;
+    }
+    .b2 {
+        font-size: 0.8rem;
+    }
+    #aa2 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width:360px) {
+    .r1 {
+        margin-left: 0px;
+    }
+    .c1 {
+        width: 12rem!important;
+    }
+}
+
+@media (max-width:320px) {
+    #ic1 {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+#login {
+    background: url("/static/images/donorbackgroundimage.jpg") no-repeat center center/cover;
+}
+
+#account {
+    background: url("/static/images/cabackgroundimage.jpg") 50% 0 no-repeat fixed;
+    color: white;
+}
+
+#acc {
+    background: url("/static/images/LoginsBackground.jpeg") no-repeat center center/cover;
+}
+
+#ha:hover {
+    color: blue;
+    background-color: yellow;
+    text-decoration: none;
+}

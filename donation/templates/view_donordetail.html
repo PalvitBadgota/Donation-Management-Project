@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'base.html' %}
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+</head>
+
+<body>
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Toggle</button>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header bg-light">
+            <h2 class="offcanvas-title text-danger" id="offcanvasWithBothOptionsLabel">Donation To Help</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body of1">
+            <div class="row align-items-center">
+                <div class="col-sm-3 d-flex justify-content-center mt-0">
+                    <img src="" alt="No Image" style="width:7rem;">
+                </div>
+                <div class="col-sm-9 d-flex flex-column">
+                    <h3 class="text-center">Admin</h3>
+                    <p class="text-center ">{{request.user.username}}</p>
+                </div>
+            </div>
+            <div class="container-fluid bg-light fs-4 mt-2">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-light"><a class="text-decoration-none text-dark" href="{% url 'admin_home' %}">Dashboard</a></li>
+                    <li class="list-group-item dropdown bg-light">
+                        <a class="nav-link dropdown-toggle " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Donation Details</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'pending_donation' %}">New Donation Request</a></li>
+                            <li><a class="dropdown-item" href="{% url 'accepted_donation' %}">Accepted Donations</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+                        </ul>
+
+                    </li>
+
+                    <!-- <li class="list-group-item dropdown bg-light">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Contact Us Queries</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
+                            <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+                        </ul>
+                    </li> -->
+
+                    <li class="list-group-item dropdown bg-light">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Donation Area</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'add_area' %}">Add Donation Area</a></li>
+                            <li><a class="dropdown-item" href="{% url 'manage_area' %}">Manage Donation Area</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="list-group-item bg-light"><a class="text-decoration-none text-dark" href="{% url 'donor_detail' %}">Donor Details</a></li>
+                    <li class="list-group-item dropdown bg-light">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Volunteer Details</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'new_volunteer' %}">New Volunteer</a></li>
+                            <li><a class="dropdown-item" href="{% url 'manage_area' %}">Accepted Volunteer</a></li>
+                            <li><a class="dropdown-item" href="{% url 'manage_area' %}">Rejected Volunteer</a></li>
+                            <li><a class="dropdown-item" href="{% url 'manage_area' %}">All Volunteer</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item bg-light"><a class="text-decoration-none text-dark" href="{% url 'logout' %}">LogOut</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card shadow" style="overflow:auto">
+            <div class="card-body">
+
+                <h2 style="border-bottom:2px solid orange;"><b>View Donor Details</b></h2>
+                <table class="table table-bordered table-striped">
+                    <tr align="center">
+                        <td colspan="4" class="fs-4 py-3"><b style="color:red;">Donor Details</b></td>
+                    </tr>
+                    <tr>
+                        <th>Donor Name</th>
+                        <td>{{donor.user.first_name}} {{donor.user.last_name}}</td>
+                        <th>Donor Contact</th>
+                        <td>{{donor.contact}}</td>
+                    </tr>
+                    <tr>
+                        <th>Donor Email</th>
+                        <td>{{donor.user.username}}</td>
+                        <th>Donor Pic</th>
+                        <td><img src="{{donor.userpic.url}}" style="height:50px;height:50px;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" align="center">
+                            <a href="{% url 'delete_donor' donor.user.id %}" class="text-danger lead" onclick="return confirm('Are You Really Want To delete?')" id="ha"><b>Delete</b></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

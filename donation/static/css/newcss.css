@@ -1,0 +1,8 @@
+#q {
+    color: white;
+}
+
+#ha:hover {
+    color: brown;
+    font-size: 1.3rem;
+}

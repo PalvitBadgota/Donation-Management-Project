@@ -1,0 +1,129 @@
+{% extends 'volunteer_base.html' %} {% block main %}
+
+<div class="card shadow" style="overflow:auto">
+    <div class="card-body">
+        <h2 style="border-bottom:2px solid orange;"><b>View Donation Detail</b></h2>
+
+        <table class="table table-bordered table-striped">
+            <tr align="center">
+                <td colspan="4" class="fs-4 py-3"><b style="color:red;">Donor Details</b></td>
+            </tr>
+            <tr>
+                <th>Donor Name</th>
+                <td>{{donation.donor.user.first_name}} {{donation.donor.user.last_name}}</td>
+                <th>Donor Contact</th>
+                <td>{{donation.donor.contact}}</td>
+            </tr>
+            <tr>
+                <th>Donor Email</th>
+                <td>{{donation.donor.user.username}}</td>
+                <th>Donor Pic</th>
+                <td><img src="{{donation.donor.userpic.url}}" style="height:50px;height:50px;"></td>
+            </tr>
+
+            <tr align="center">
+                <td colspan="4" class="fs-4 py-3"><b style="color:red;">Donation Details</b></td>
+            </tr>
+
+            <tr>
+                <th>Donation Name</th>
+                <td>{{donation.donationname}}</td>
+                <th>Donation Pic</th>
+                <td><img src="{{donation.donationpic.url}}" style="height:50px;"></td>
+            </tr>
+            <tr>
+                <th>Collection Location</th>
+                <td>{{donation.collectionloc}}</td>
+                <th>Donation Date</th>
+                <td>{{donation.donationdate}}</td>
+            </tr>
+
+            <tr>
+                <th>Status</th>
+                <td>
+                    {{donation.stat}}
+                </td>
+                <th>Updation Date</th>
+                <td>{{donation.updationdate}}</td>
+            </tr>
+
+            <tr>
+                <th>Admin Remark</th>
+                <td colspan="3">{{donation.adminremark}}</td>
+            </tr>
+
+            <tr>
+                <th>Donation Area</th>
+                <td colspan="3">
+                    {{donation.donationarea.areaname}}
+                </td>
+            </tr>
+
+            <tr>
+                <th>Volunteer</th>
+                <td colspan="3">{{donation.volunteer.user.username}}[{{donation.volunteer.user.first_name}} {{donation.volunteer.user.last_name}}]</td>
+            </tr>
+            <tr>
+                <th>Volunteer Remark</th>
+                <td colspan="3">{{donation.volunteerremark}}</td>
+            </tr>
+
+            {% if donation.stat == "Donation Received" %}
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <tr>
+                    <th>Donation Delivered Successfully</th>
+                    <td colspan="3">
+                        <input type="radio" name='statu' value="Donation Delivered Successfully"> Donation Delivered Successfully
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Upload Delivered Pic</th>
+                    <td colspan="3">
+                        <input type="file" class="form-control" name='DeliveryPic'>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+
+                    </td>
+                    <td colspan="3"><button type="submit" class="btn btn-primary">Update <i class="fa fa-arrow-circle-right"></i></button></td>
+
+                </tr>
+
+
+
+            </form>
+
+            {% endif %}
+
+
+            {% if donation.stat == "Donation Delivered Successfully" %}
+
+                <tr>
+                    <th>Delivered Pic</th>
+                    <td colspan="3">
+                        <img src="{{donation.deliverypic.url}}" alt='No Image' style="height:50px;"> 
+                    </td>
+                </tr>
+            </form>
+
+            {% endif %}
+            
+
+        </table>
+    </div>
+</div>
+{% if error == "no" %}
+<script>
+    alert('Donation status updated and Delivery pic uploaded')
+    window.location = ("{% url 'donationrec_detail' donation.id %}")
+</script>
+{% endif %} {% if error == "yes" %}
+<script>
+    alert("Something went wrong... Please try again..")
+</script>
+{% endif %} {% endblock %}

@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'base.html' %}
+</head>
+
+<body>
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Toggle</button>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header bg-light">
+            <h2 class="offcanvas-title text-danger" id="offcanvasWithBothOptionsLabel">Donation To Help</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body of1">
+            <div class="row align-items-center">
+                <div class="col-sm-3 d-flex justify-content-center mt-0">
+                    <img src="{{request.user.volunteer_set.all.0.userpic.url}}" alt="No Image" style="width:7rem;">
+                </div>
+                <div class="col-sm-9 d-flex flex-column">
+                    <h3 class="text-center">Volunteer</h3>
+                    <p class="text-center ">{{request.user.username}}</p>
+                </div>
+            </div>
+            <div class="container-fluid bg-light fs-4 mt-2">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-light"><a class="text-decoration-none text-dark" href="{% url 'volunteer_home' %}">Dashboard</a></li>
+                    <li class="list-group-item bg-light"><a class="text-decoration-none text-dark" href="{% url 'collection_reg' %}">Donation Collection Request</a></li>
+                    {% comment %} <li class="list-group-item bg-light"><a class="text-decoration-none text-dark" href="{% url 'donation_history' %}"></a></li> {% endcomment %}
+                    <li class="list-group-item dropdown bg-light">
+                        <a class="nav-link dropdown-toggle " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">collection History</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'donationrec_volunteer' %}">Donation Received</a></li>
+                            <li><a class="dropdown-item" href="{% url 'donationnotrec_volunteer' %}">Donation Not Received</a></li>
+                            <li><a class="dropdown-item" href="{% url 'donation_delivered' %}">Donation Delivered</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="list-group-item bg-light"><a class="text-decoration-none text-dark" href="{% url 'profile_volunteer' %}">Profile</a></li>
+
+                    <li class="list-group-item bg-light"><a class="text-decoration-none text-dark" href="{% url 'changepwd_volunteer' %}">Change Password</a></li>
+                    <li class="list-group-item bg-light"><a class="text-decoration-none text-dark" href="{% url 'logout' %}">LogOut</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    {% block main %} {% endblock %}
+
+
+</body>
+
+</html>

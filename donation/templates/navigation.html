@@ -1,0 +1,39 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#"><img class="pb-1" id="logo" src="{% static 'images/logoimagedonation.png' %}" alt="No Image"><span class="display-6 m-3 fw-xl-lighter fw-normal font-italic" id="sp1">Donation To Help</span></a> 
+        
+        <button class="navbar-toggler border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse justify-content-end text-center" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0 ">
+                {% if request.path == '/' %}
+                <li class="nav-item">
+                    <a class="nav-link active text-white a1" aria-current="page" href="#home"><span class="sp2">Home</span></a>
+                </li>
+                <li class="nav-item l1">
+                    <a class="nav-link text-white a1" href="#about"><span class="sp2">About Us</span></a>
+                </li>
+                <li class="nav-item l1">
+                    <a class="nav-link text-white a1" href="#donate"><span class="sp2">Donate</span></a>
+                </li>
+                <li class="nav-item l1">
+                    <a class="nav-link text-white a1" href="#contact"><span class="sp2">Contact Us</span></a>
+                </li>
+                <li class="nav-item l1">
+                    <a class="nav-link text-white a1" href="{% url 'all_logins' %}"><span class="sp2">Login</span></a>
+                </li>
+                {% else %}
+                <li class="nav-item l1">
+                    <a class="nav-link text-white a1" href="{% url 'index' %}"><span class="sp2">Go back To Home Page</span></a>
+                </li>
+
+                {% endif %}
+            </ul>
+
+        </div>
+    </div>
+</nav>

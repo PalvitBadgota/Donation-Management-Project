@@ -1,0 +1,62 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% include 'base.html' %}
+</head>
+
+<body id="login">
+    {% include 'navigation.html' %}
+    <div class="row min-vh-100">
+        <div class="col-xxl-6 col-md-8 m-auto" style="opacity:0.8;">
+            <div class="card bg-dark  m-sm-4">
+                <div>
+                    <img src="{% static 'images/avatar1.jpg'%}" style="width:50%;" class="rounded-circle mx-auto d-block w-30" alt="No Image">
+                    <h1 class="text-white text-center">Volunteer Login</h1>
+                </div>
+                <div class="card-body">
+
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <div class="input-group flex-nowrap mt-3 mb-3 ">
+                            <span class="input-group-text" id="addon-wrapping"><i class="fa fa-user fa-2x"></i></span>
+                            <input type="email" name="emailid" class="form-control fs-4 lead" placeholder="Email Id" aria-label="Email Id" aria-describedby="addon-wrapping">
+                        </div>
+
+                        <div class="input-group flex-nowrap mt-2 mb-3 ">
+                            <span class="input-group-text" id="addon-wrapping"><i class="fa fa-lock fa-2x"></i></span>
+                            <input type="password" name="pwd" class="form-control fs-4 " placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-4">
+                                <input type="submit" value="Login" class="btn btn-success fs-5 lead px-sm-5">
+                            </div>
+                            <div class="col-8">
+                                <a href="{% url 'volunteer_reg' %}" class="text-white mt-1 lead text-decoration-none" style="float:right;">Create Account<i class="fas fa-angle-double-right mx-2" id="ic1"></i></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if error == "no" %}
+    <script>
+        alert('Logged In Successfull');
+        window.location = ("{% url 'volunteer_home' %}");
+    </script>
+    {% endif %} {% if error == "yes" %}
+    <script>
+        alert('Wrong Login Credentials , Try Again...');
+    </script>
+    {% endif %} {% if error == "not" %}
+    <script>
+        alert('Your Status is pending... Please Wait...');
+    </script>
+    {% endif %}
+
+</body>
+
+</html>

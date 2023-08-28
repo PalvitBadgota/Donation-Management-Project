@@ -1,0 +1,53 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% include 'base.html' %}
+</head>
+
+<body>
+    {% include 'navigation.html' %}
+
+    <div class="container-fluid pb-5" id="acc">
+        <h2 class=" text-center text-white pt-3">Login As a...</h2>
+        <div class="row mt-4 d-flex justify-content-around ">
+            <div class=" col-sm-6 col-md-4 my-2 d-flex justify-content-center ">
+                <div class="card " style="width:22rem ">
+                    <img src="{% static 'images/loginsImage.jpeg' %} " class="card-img-top " alt="... ">
+                    <div class="card-body ">
+                        <h4 class="card-title "><b>Donor</b></h4>
+                        <p class="card-text ">Happiness doesn't result from what we get, but from what we give.</p>
+                        <a href="{% url 'donor_login' %} " class="btn btn-primary ">Go To Donor Login</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 col-sm-6 my-2 d-flex justify-content-center ">
+                <div class="card " style="width: 22rem; ">
+                    <img src="{% static 'images/loginsImage.jpeg' %} " class="card-img-top " alt="... ">
+                    <div class="card-body ">
+                        <h4 class="card-title "><b>Volunteer</b></h4>
+                        <p class="card-text ">Volunteers do not necessarily have the time;they just have the heart.</p>
+                        <a href="{% url 'volunteer_login' %} " class="btn btn-primary ">Go To Volunteer Login</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-4 my-2 d-flex justify-content-center ">
+                <div class="card " style="width: 22rem; ">
+                    <img src="{% static 'images/loginsImage.jpeg' %} " class="card-img-top " alt="... ">
+                    <div class="card-body ">
+                        <h4 class="card-title "><b>Admin</b></h4>
+                        <p class="card-text ">A leader helps the firm to achieve its purpose and business goals.</p>
+                        <a href="{% url 'admin_login' %} " class="btn btn-primary ">Go To Admin Login</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

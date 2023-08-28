@@ -1,0 +1,46 @@
+{% extends 'donor_base.html' %} {% block main %}
+
+
+
+<div class="card shadow" style="overflow:auto">
+    <div class="card-body">
+        <h2 style="border-bottom:2px solid orange;"><b>Donation History</b></h2>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>S.NO</th>
+                    <th>Donation Name</th>
+                    <th>Donation Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in donation %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.donationname}}</td>
+                    <td>{{i.donationdate}}</td>
+                    <td>{{i.stat}}</td>
+                    <td>
+                        {% if i.stat == "Donation Delivered Successfully" %}
+                        <a href="{% url 'donor_historyupdate' i.id %}">View Details</a>
+                        {% endif %}
+                        {% if i.stat == "Volunteer Allocated" %}
+                        <a href="{% url 'donor_historyupdate' i.id %}">View Details</a>
+                        {% endif %}
+                        {% if i.stat == "Donation Received" %}
+                        <a href="{% url 'donor_historyupdate' i.id %}">View Details</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+
+
+{% endblock %}
